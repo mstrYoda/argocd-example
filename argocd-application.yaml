@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example-nginx-application
+spec:
+  destination:
+    name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: application
+    repoURL: 'https://github.com/mstrYoda/argocd-example.git'
+    targetRevision: HEAD
+  project: findmentor
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
