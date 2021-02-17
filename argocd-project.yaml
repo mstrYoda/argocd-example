@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: mstryoda-projects
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - namespace: default
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/mstrYoda/argocd-example
+status: {}
