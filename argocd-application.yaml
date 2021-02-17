@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: example-nginx-application
+  namespace: argocd
 spec:
   destination:
     name: ''
@@ -11,7 +12,7 @@ spec:
     path: application
     repoURL: 'https://github.com/mstrYoda/argocd-example.git'
     targetRevision: HEAD
-  project: findmentor
+  project: mstryoda-projects
   syncPolicy:
     automated:
       prune: true
